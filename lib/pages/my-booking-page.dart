@@ -199,97 +199,44 @@ class MyBookingPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        currentIndex: 1, // Highlight "My Booking" Tab
-        onTap: (index) {
-          // Handle bottom navigation taps
-          if (index == 0) {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, animation, secondaryAnimation) =>
-                    const HomePage(),
-                transitionsBuilder:
-                    (context, animation, secondaryAnimation, child) {
-                  const begin = Offset(1.0, 0.0); // Mulai dari kanan
-                  const end = Offset.zero;
-                  const curve = Curves.easeInOut;
-                  var tween = Tween(begin: begin, end: end)
-                      .chain(CurveTween(curve: curve));
-                  var offsetAnimation = animation.drive(tween);
-
-                  return SlideTransition(
-                      position: offsetAnimation, child: child);
-                },
-              ),
-            );
-          } else if (index == 1) {
-            // Stay on My Booking Page
-          } else if (index == 2) {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, animation, secondaryAnimation) =>
-                    const MoviePage(),
-                transitionsBuilder:
-                    (context, animation, secondaryAnimation, child) {
-                  const begin = Offset(1.0, 0.0); // Mulai dari kanan
-                  const end = Offset.zero;
-                  const curve = Curves.easeInOut;
-                  var tween = Tween(begin: begin, end: end)
-                      .chain(CurveTween(curve: curve));
-                  var offsetAnimation = animation.drive(tween);
-
-                  return SlideTransition(
-                      position: offsetAnimation, child: child);
-                },
-              ),
-            );
-          } else if (index == 3) {
-            Navigator.pushReplacement(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, animation, secondaryAnimation) =>
-                    const CinemaPage(),
-                transitionsBuilder:
-                    (context, animation, secondaryAnimation, child) {
-                  const begin = Offset(1.0, 0.0); // Mulai dari kanan
-                  const end = Offset.zero;
-                  const curve = Curves.easeInOut;
-                  var tween = Tween(begin: begin, end: end)
-                      .chain(CurveTween(curve: curve));
-                  var offsetAnimation = animation.drive(tween);
-
-                  return SlideTransition(
-                      position: offsetAnimation, child: child);
-                },
-              ),
-            );
-          }
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Color.fromARGB(246, 3, 38, 112)),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.confirmation_number,
-                color: Color.fromARGB(246, 3, 38, 112)),
-            label: 'My Booking',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.movie, color: Color.fromARGB(246, 3, 38, 112)),
-            label: 'Movie',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.theaters, color: Color.fromARGB(246, 3, 38, 112)),
-            label: 'Cinema',
-          ),
-        ],
-        selectedItemColor: const Color.fromARGB(246, 3, 38, 112),
-        unselectedItemColor: const Color.fromARGB(246, 3, 38, 112),
-        type: BottomNavigationBarType.fixed,
-      ),
+          currentIndex: 2, // Highlight "Movie" Tab
+          onTap: (index) {
+            if (index == 0) {
+              Navigator.pushReplacementNamed(context, '/home');
+            } else if (index == 1) {
+              Navigator.pushReplacementNamed(context, '/my-booking');
+            } else if (index == 2) {
+              Navigator.pushReplacementNamed(context, '/movie');
+            } else if (index == 3) {
+              Navigator.pushReplacementNamed(context, '/cinema');
+            }
+          },
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home, color: Color.fromARGB(246, 3, 38, 112)),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.confirmation_number,
+                  color: Color.fromARGB(246, 3, 38, 112)),
+              label: 'My Booking',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.movie, color: Color.fromARGB(246, 3, 38, 112)),
+              label: 'Movie',
+            ),
+            BottomNavigationBarItem(
+              icon:
+                  Icon(Icons.theaters, color: Color.fromARGB(246, 3, 38, 112)),
+              label: 'Cinema',
+            ),
+          ],
+          selectedItemColor: const Color.fromARGB(246, 3, 38, 112),
+          unselectedItemColor: const Color.fromARGB(246, 3, 38, 112),
+          backgroundColor:
+              Colors.white, // Set bottom navigation bar background to white
+          type: BottomNavigationBarType.fixed,
+        )
     );
   }
 }

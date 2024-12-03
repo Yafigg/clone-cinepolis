@@ -61,25 +61,27 @@ class MoviePage extends StatelessWidget {
               children: [
                 // Search Section with Border
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   decoration: BoxDecoration(
-                    border: Border.all(
-                        color: Color.fromARGB(246, 3, 38, 112),
-                        width: 2), // Blue Border
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    border:
+                        Border.all(color: Colors.grey.shade300), // gray border
                     borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Row(
-                    children: [
-                      Icon(Icons.search,
-                          color: Color.fromARGB(246, 3, 38, 112)),
-                      SizedBox(width: 10),
-                      Text(
-                        'Search Movie / Cinema',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.2), // shadow color
+                        blurRadius: 5,
+                        spreadRadius: 2,
                       ),
                     ],
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.search),
+                      hintText: 'Cinema / Movie',
+                      border: InputBorder.none,
+                      hintStyle: TextStyle(color: Colors.grey.shade600),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -310,70 +312,14 @@ class MoviePage extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: 2, // Highlight "Movie" Tab
           onTap: (index) {
-            switch (index) {
-              case 0:
-                Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) =>
-                          const HomePage(),
-                      transitionsBuilder:
-                          (context, animation, secondaryAnimation, child) {
-                        const begin = Offset(1.0, 0.0);
-                        const end = Offset.zero;
-                        const curve = Curves.easeInOut;
-                        var tween = Tween(begin: begin, end: end)
-                            .chain(CurveTween(curve: curve));
-                        var offsetAnimation = animation.drive(tween);
-
-                        return SlideTransition(
-                            position: offsetAnimation, child: child);
-                      },
-                    ));
-                break;
-              case 1:
-                Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) =>
-                          const MyBookingPage(), // Ganti dengan MyBookingPage
-                      transitionsBuilder:
-                          (context, animation, secondaryAnimation, child) {
-                        const begin = Offset(1.0, 0.0);
-                        const end = Offset.zero;
-                        const curve = Curves.easeInOut;
-                        var tween = Tween(begin: begin, end: end)
-                            .chain(CurveTween(curve: curve));
-                        var offsetAnimation = animation.drive(tween);
-
-                        return SlideTransition(
-                            position: offsetAnimation, child: child);
-                      },
-                    ));
-                break;
-              case 2:
-                // Stay on Movie Page
-                break;
-              case 3:
-                Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) =>
-                          const CinemaPage(),
-                      transitionsBuilder:
-                          (context, animation, secondaryAnimation, child) {
-                        const begin = Offset(1.0, 0.0);
-                        const end = Offset.zero;
-                        const curve = Curves.easeInOut;
-                        var tween = Tween(begin: begin, end: end)
-                            .chain(CurveTween(curve: curve));
-                        var offsetAnimation = animation.drive(tween);
-
-                        return SlideTransition(
-                            position: offsetAnimation, child: child);
-                      },
-                    ));
-                break;
+            if (index == 0) {
+              Navigator.pushReplacementNamed(context, '/home');
+            } else if (index == 1) {
+              Navigator.pushReplacementNamed(context, '/my-booking');
+            } else if (index == 2) {
+              Navigator.pushReplacementNamed(context, '/movie');
+            } else if (index == 3) {
+              Navigator.pushReplacementNamed(context, '/cinema');
             }
           },
           items: const [

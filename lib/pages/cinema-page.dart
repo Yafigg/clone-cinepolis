@@ -185,7 +185,8 @@ class CinemaPage extends StatelessWidget {
           backgroundColor:
               Colors.white, // Set bottom navigation bar background to white
           type: BottomNavigationBarType.fixed,
-        ));
+        )
+        );
   }
 
   // Function to build Cinema location card with border and shadow
