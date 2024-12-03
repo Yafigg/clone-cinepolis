@@ -18,7 +18,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
       () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => LoginPage(),  // Hapus 'const' di sini
+            builder: (context) => LoginPage(),  
           ),
         );
       },
