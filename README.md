@@ -24,4 +24,4 @@
 
 ## 6. Cinema Page.
 
-![App Screenshot](/assets/cinemea-page.png);
+![App Screenshot](/assets/cinema-page.png);
