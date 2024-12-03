@@ -1,5 +1,7 @@
 # Cloning Cinepolis 
 
+# Dokumentasi Project
+
 ## 1. Slash Screen Page
 
 ![App Screenshot](/assets/splash-screen.png);
