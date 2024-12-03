@@ -1,16 +1,27 @@
-# clone_cinepolis
+# Cloning Cinepolis 
 
-A new Flutter project.
+## 1. Slash Screen Page
 
-## Getting Started
+![App Screenshot](/assets/splash-screen.png);
 
-This project is a starting point for a Flutter application.
+## 2. Login Page.
 
-A few resources to get you started if this is your first Flutter project:
+![App Screenshot](/assets/login-page.png);
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 3. home Page.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![App Screenshot](/assets/home-page1.png);
+![App Screenshot](/assets/home-page2.png);
+![App Screenshot](/assets/home-page3.png);
+
+## 4. My Booking Page.
+
+![App Screenshot](/assets/my-booking-page.png);
+
+## 5. Movie Page.
+
+![App Screenshot](/assets/movie-page.png);
+
+## 6. Cinema Page.
+
+![App Screenshot](/assets/cinemea-page.png);
